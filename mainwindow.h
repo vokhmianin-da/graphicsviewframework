@@ -6,6 +6,7 @@
 #include "blockscheme.h"
 #include <QContextMenuEvent>
 #include <QGraphicsSceneMouseEvent>
+#include <QEvent>
 
 class MainWindow : public QGraphicsView
 {
@@ -24,7 +25,7 @@ private slots:
     void randomColorF();
     void randomColorAll();
 protected:
-    void mousePressEvent(QGraphicsSceneMouseEvent  *event);
+    virtual void mousePressEvent(QMouseEvent *event) override;
 };
 
 #endif // MAINWINDOW_H

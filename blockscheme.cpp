@@ -36,10 +36,7 @@ void BlockScheme::mousePressEvent(QGraphicsSceneMouseEvent  *event)
     }
     if (event->button() == Qt::RightButton)
     {
-        if (geometry == Geometry::ELLIPS)
-        {
-            geometry = Geometry::RECTANGLE;
-        } else geometry = Geometry::ELLIPS;
+        delete this;
         emit reDraw();
     }
 }

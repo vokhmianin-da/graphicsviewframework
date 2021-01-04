@@ -40,7 +40,7 @@ void MainWindow::randomColorAll()
     bscheme1->setBrush(QBrush(QColor(rand() % 256, rand() % 256, rand() % 256)));
 }
 
-void MainWindow::mousePressEvent(QGraphicsSceneMouseEvent *event)   //НЕ РАБОТАЕТ!!!!!!!!!!!!!!!!!!!!!
+void MainWindow::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
     {
@@ -48,4 +48,14 @@ void MainWindow::mousePressEvent(QGraphicsSceneMouseEvent *event)   //НЕ РА�
         scence->addItem(ptr);
     }
 }
+
+
+//void MainWindow::mousePressEvent(QGraphicsSceneMouseEvent *event)   //НЕ РАБОТАЕТ!!!!!!!!!!!!!!!!!!!!!
+//{
+//    if (event->button() == Qt::LeftButton)
+//    {
+//        BlockScheme *ptr = new BlockScheme(this);
+//        scence->addItem(ptr);
+//    }
+//}
 
