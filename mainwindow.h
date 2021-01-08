@@ -7,6 +7,7 @@
 #include <QContextMenuEvent>
 #include <QGraphicsSceneMouseEvent>
 #include <QEvent>
+#include "mousefilter.h"
 
 class MainWindow : public QGraphicsView
 {

@@ -12,12 +12,14 @@ SOURCES += \
     blockscheme.cpp \
     ellipsdraw.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mousefilter.cpp
 
 HEADERS += \
     blockscheme.h \
     ellipsdraw.h \
-    mainwindow.h
+    mainwindow.h \
+    mousefilter.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

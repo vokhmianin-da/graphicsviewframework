@@ -8,16 +8,18 @@ MainWindow::MainWindow(QWidget *parent)
     srand(clock());
     scence = new QGraphicsScene(this);
     setScene(scence);
-    bscheme = new BlockScheme(this);
-    scence->addItem(bscheme);
-    bscheme1 = new BlockScheme(this);
-    scence->addItem(bscheme1);
-    scence->addText("Hello!");
+    MouseFilter *ptrFilter = new MouseFilter;
+    installEventFilter(ptrFilter);
+//    bscheme = new BlockScheme(this);
+//    scence->addItem(bscheme);
+//    bscheme1 = new BlockScheme(this);
+//    scence->addItem(bscheme1);
+//    scence->addText("Hello!");
 
-    connect(bscheme, SIGNAL(reDraw()), this, SLOT(reDraw()));
-    connect(bscheme1, SIGNAL(reDraw()), this, SLOT(reDraw()));
-    connect(bscheme, SIGNAL(dblClick()), this, SLOT(randomColorF()));
-    connect(bscheme1, SIGNAL(dblClick()), this, SLOT(randomColorAll()));
+//    connect(bscheme, SIGNAL(reDraw()), this, SLOT(reDraw()));
+//    connect(bscheme1, SIGNAL(reDraw()), this, SLOT(reDraw()));
+//    connect(bscheme, SIGNAL(dblClick()), this, SLOT(randomColorF()));
+//    connect(bscheme1, SIGNAL(dblClick()), this, SLOT(randomColorAll()));
 }
 MainWindow::~MainWindow()
 {
@@ -44,7 +46,9 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
     {
+//        MouseFilter *ptrFilter = new MouseFilter;
         BlockScheme *ptr = new BlockScheme(this);
+//        ptr->installEventFilter(ptrFilter);
         scence->addItem(ptr);
     }
 }
