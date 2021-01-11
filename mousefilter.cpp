@@ -20,6 +20,10 @@ bool MouseFilter::eventFilter(QObject *obj, QEvent *event)
                 delete obj;
                 return true;
             }
+            else if (ptrEvent->button() == Qt::LeftButton)
+            {
+                return true;
+            }
             else
             {
                 return true;

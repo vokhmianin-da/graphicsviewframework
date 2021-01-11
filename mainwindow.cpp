@@ -48,7 +48,8 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event)
     {
 //        MouseFilter *ptrFilter = new MouseFilter;
         BlockScheme *ptr = new BlockScheme(this);
-        ptr->setFlags(QGraphicsItem::ItemIsMovable);
+        ptr->setPos(event->pos());
+//        ptr->setFlags(QGraphicsItem::ItemIsMovable);
 //        ptr->installEventFilter(ptrFilter);
         scence->addItem(ptr);
     }
