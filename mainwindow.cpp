@@ -5,7 +5,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QGraphicsView(parent)
 {    
-    srand(clock());
+    //srand(clock());
     scence = new QGraphicsScene(this);
     setScene(scence);
     MouseFilter *ptrFilter = new MouseFilter;
@@ -42,12 +42,13 @@ void MainWindow::randomColorAll()
     bscheme1->setBrush(QBrush(QColor(rand() % 256, rand() % 256, rand() % 256)));
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *event)
+void MainWindow::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
     {
 //        MouseFilter *ptrFilter = new MouseFilter;
         BlockScheme *ptr = new BlockScheme(this);
+        ptr->setFlags(QGraphicsItem::ItemIsMovable);
 //        ptr->installEventFilter(ptrFilter);
         scence->addItem(ptr);
     }

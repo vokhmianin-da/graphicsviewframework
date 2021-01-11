@@ -26,7 +26,7 @@ private slots:
     void randomColorF();
     void randomColorAll();
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
+    virtual void mouseReleaseEvent(QMouseEvent *event) override;
 };
 
 #endif // MAINWINDOW_H
